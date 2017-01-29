@@ -16,6 +16,11 @@ function clicked(){
 		}).sort((a,b) => {
 			return b.numLines - a.numLines;
 		});
+
+		//PREPARE CHART DIV
+		$('#result').append('<div id="chart"></div>');
+		createChart(sorted_dict);
+
 		//PREPARE TABLE HEADER
 		$('#result').append('<table><tr><th>#</th><th>Character</th><th># Lines</th></tr></table>');
 		//ADD TABLE ROWS
@@ -24,4 +29,26 @@ function clicked(){
 			$('#result table').append(content);
 		})
 	});
+}
+
+function createChart(data) {
+	let topFive = data.slice(0, 5).map(row => {
+		let { character, numLines } = row;
+		return { label: character, y: numLines };
+	});
+
+	var chart = new CanvasJS.Chart("chart", {
+		theme: "theme2",
+		title:{
+			text: "Number of Lines per Character"              
+		},
+		animationEnabled: false,
+		data: [              
+			{
+				type: "column",
+				dataPoints: topFive
+			}
+		]
+	});
+	chart.render();
 }

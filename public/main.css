@@ -28,6 +28,12 @@ form button{
 	margin-bottom: 100px;
 }
 
+#result #chart{
+	height: 300px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
 #result table{
 	width: 100%;
 }
