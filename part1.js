@@ -9,9 +9,9 @@ var xml2js = require('xml2js');
 
 //PRINT PRETTY FUNCTION
 function prettyPrint(arr) {
-  arr.forEach( data => {
-    console.log(`${data.character}:  ${data.numLines}`);
-  })
+    arr.forEach( data => {
+        console.log(`${data.character}:  ${data.numLines}`);
+    })
 }
 
 //CALLBACK FUNCTION FOR DOWNLOAD
