@@ -3,9 +3,11 @@ let chaiHttp = require('chai-http');
 let server = require('../server');
 let should = chai.should();
 let expect = chai.expect;
+//PART 1 BUT DOESN'T DOWNLOAD
 let getAnalysis = require('../part1_test.js');
 
 const url = 'http://www.ibiblio.org/xml/examples/shakespeare/macbeth.xml';
+//FOR ROUTER TESTING
 chai.use(chaiHttp);
 
 describe('Fetch Macbeth xml without downloading', function() {

@@ -7,6 +7,13 @@ const fileLocation = `${__dirname}/xml/${new Date().toISOString()}_macbeth.xml`;
 var xml2js = require('xml2js');
 
 //CALLBACK FUNCTION FOR DOWNLOAD
+
+function prettyPrint(arr) {
+  arr.forEach( data => {
+    console.log(`${data.character}:  ${data.numLines}`);
+  })
+}
+
 var callback = function(err) {
     if(err) {
         console.error("couldn't complete the download" + err);
@@ -28,7 +35,7 @@ var callback = function(err) {
                         }).sort((a,b) => {
                             return b.numLines - a.numLines;
                         });
-                        console.log(sorted_dict)
+                        prettyPrint(sorted_dict);
                     }
                 });
             }
