@@ -6,14 +6,15 @@ const url = 'http://www.ibiblio.org/xml/examples/shakespeare/macbeth.xml';
 const fileLocation = `${__dirname}/xml/${new Date().toISOString()}_macbeth.xml`;
 var xml2js = require('xml2js');
 
-//CALLBACK FUNCTION FOR DOWNLOAD
 
+//PRINT PRETTY FUNCTION
 function prettyPrint(arr) {
   arr.forEach( data => {
     console.log(`${data.character}:  ${data.numLines}`);
   })
 }
 
+//CALLBACK FUNCTION FOR DOWNLOAD
 var callback = function(err) {
     if(err) {
         console.error("couldn't complete the download" + err);
@@ -63,4 +64,5 @@ var download = function(url, dest, cb) {
     });
 };
 
+//RUN THE FUNCTIONS
 download(url, fileLocation, callback);
