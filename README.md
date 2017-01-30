@@ -2,20 +2,20 @@
 
 **PLEASE HAVE NODEJS AND NPM INSTALLED
 
-Pre-Req
+-Pre-Req
 
-npm install
+  npm install
 
-Part 1
+-Part 1
 
-node part1.js
+  node part1.js
 
-Part 2
+-Part 2
 
-npm start
+  npm start
 
 http://localhost:3000/
 
-Test
+-Test
 
-npm test
+  npm test
