@@ -42,22 +42,22 @@ describe('Fetch Macbeth xml without downloading', function() {
 
 describe('Fetch non-existing url using http module', function() {
 	it('should return ENOTFOUND error when given non-http invalid link and res is undefined', function(done){
-		let request = chai.request("dafdsfsdf")
+		let request = chai.request('dafdsfsdf')
 		.get('/')
 		.end(function(err, res){
-			expect(err.code).to.eql("ENOTFOUND");
+			expect(err.code).to.eql('ENOTFOUND');
 			expect(res).to.be.an('undefined');
 			done()
 		})
 	})
 
 	it('given non-existing link', function(done){
-		getAnalysis("http://www.ibiblio.org/xml/examples/shakespeare/mac.xml")
+		getAnalysis('http://www.ibiblio.org/xml/examples/shakespeare/mac.xml')
 		.then((result) => {
 			done();
 		})
 		.catch(err => {
-			expect(err.message).to.equal("Time out. Problem fetching the data");
+			expect(err.message).to.equal('Time out. Problem fetching the data');
 			done()
 		})
 	})

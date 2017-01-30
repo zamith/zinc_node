@@ -20,7 +20,7 @@ function getAnalysis(url){
                 if(err){
                     return promise;
                 } else{
-                    dictionary = FindByTag(result, "SPEAKER", {});
+                    dictionary = FindByTag(result, 'SPEAKER', {});
                 }
             });
         });
@@ -35,7 +35,7 @@ function getAnalysis(url){
             if(Object.keys(dictionary).length > 0){
                 resolve(dictionary);
             }else{
-                reject({message: "Time out. Problem fetching the data"});
+                reject({message: 'Time out. Problem fetching the data'});
             }
         }, 1000);
     });

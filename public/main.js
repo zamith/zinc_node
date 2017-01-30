@@ -1,10 +1,10 @@
 function clicked(){
-	const url = "/analyze";
+	const url = '/analyze';
 	$('#result').empty();
 	//SHOW LOADING WHILE FETCHING DATA
 	$('#result').append('<p>Loading</p>');
 	//FETCH URL FROM THE INPUT
-	let $url = document.getElementsByName("url")[0].value;
+	let $url = document.getElementsByName('url')[0].value;
 	let data = { $url };
 	//ASYNC CALL
 	$.post(url, data, {crossDomain: true})
@@ -37,15 +37,15 @@ function createChart(data) {
 		return { label: character, y: numLines };
 	});
 
-	var chart = new CanvasJS.Chart("chart", {
-		theme: "theme2",
+	var chart = new CanvasJS.Chart('chart', {
+		theme: 'theme2',
 		title:{
-			text: "Number of Lines per Character"              
+			text: 'Number of Lines per Character'              
 		},
 		animationEnabled: false,
 		data: [              
 			{
-				type: "column",
+				type: 'column',
 				dataPoints: topFive
 			}
 		]

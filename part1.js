@@ -30,7 +30,7 @@ var callback = function(err) {
                         console.error(err);
                     } else {
                         //TURN THE PARSED XML RESULT INTO A DICTIONARY
-                        let dictionary = FindByTag(result, "SPEAKER", {});
+                        let dictionary = FindByTag(result, 'SPEAKER', {});
                         let sorted_dict = Object.keys(dictionary).map( character => {
                             return {character, numLines: dictionary[character]}
                         }).sort((a,b) => {
