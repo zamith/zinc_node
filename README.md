@@ -13,6 +13,7 @@ node part1.js
 Part 2
 
 npm start
+http://localhost:3000/
 
 Test
 
